@@ -1,0 +1,40 @@
+{
+  "name": "jspm-angular-bug",
+  "version": "1.0.0",
+  "description": "Simple project showing bug when bundling angular 1",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run tsd:install & npm run jspm:install",
+    "tsd:install": "./node_modules/.bin/tsd install",
+    "jspm:install": "./node_modules/.bin/jspm install",
+    "build:ts": "tsc --project scripts/app",
+    "bundle:app": "jspm bundle app/app.bootstrap scripts/app/app-bundle.js",
+    "build": "npm run build:ts & npm run bundle:app",
+    "prestart": "npm run build",
+    "start": "http-server"
+  },
+  "keywords": [
+    "angular",
+    "jspm",
+    "systemjs"
+  ],
+  "author": "jwarren.carroll@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "bootstrap": "^3.3.5",
+    "http-server": "^0.8.5",
+    "jspm": "^0.16.13",
+    "tsd": "^0.6.5",
+    "typescript": "^1.6.2"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "scripts",
+      "packages": "scripts/lib"
+    },
+    "dependencies": {
+      "angular": "npm:angular@1.2.28"
+    },
+    "devDependencies": {}
+  }
+}
