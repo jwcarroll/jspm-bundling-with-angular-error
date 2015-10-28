@@ -31,7 +31,7 @@ TypeError: Cannot read property '0' of undefined
     at http://localhost:8081/scripts/app/app-bundle.js:760:31 <input type="text" class="form-control ng-pristine ng-valid" ng-model="message">
 ```
 
-**Note: ** The actual code that is blowing up is the `ngModel` directive built into Angular:
+**Note**: The actual code that is blowing up is the `ngModel` directive built into Angular:
 
 ```javascript
 var ngModelDirective = function() {
